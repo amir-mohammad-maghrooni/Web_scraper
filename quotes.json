@@ -1,0 +1,11 @@
+{
+    "base_url": "https://quotes.toscrape.com",
+    "output_file": "data.json",
+    "output_format": "json",
+    "selectors": {
+        "Quotes": "div.quote span.text",
+        "Author": "div.quote span small.author",
+        "Tags": "div.quote div.tags a"
+    },
+    "pagination_selector": "li.next a"
+}

@@ -1,0 +1,12 @@
+{
+    "base_url": "http://books.toscrape.com/",
+    "output_file": "books.json",
+    "output_format": "json",
+    "selectors": {
+        "title": "h3 a",
+        "price": "p.price_color",
+        "availability": "p.instock.availability",
+        "rating" : "p.star-rating"
+    },
+    "pagination_selector": "li.next a"
+}
