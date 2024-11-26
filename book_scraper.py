@@ -75,7 +75,7 @@ def scrape_books(base_url,file_name):
 
 if __name__ == "__main__":
     BASE_URL = "https://books.toscrape.com/"
-    FILE_NAME = 'webscraper\Books.'
+    FILE_NAME = 'Books.'
     # OUTPUT_FORMAT = "json"  # Change to "csv" for CSV output
     scrape_books(base_url= BASE_URL, file_name= FILE_NAME)
 

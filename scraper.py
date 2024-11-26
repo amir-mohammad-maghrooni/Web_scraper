@@ -63,7 +63,7 @@ def scrape_quotes(base_url,file_name):
 
 if __name__ == "__main__":
     BASE_URL = "http://quotes.toscrape.com"
-    FILE_NAME = 'webscraper\SQuotes.'
+    FILE_NAME = 'SQuotes.'
     # OUTPUT_FORMAT = "json"  # Change to "csv" for CSV output
     scrape_quotes(base_url= BASE_URL, file_name= FILE_NAME)
 

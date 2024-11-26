@@ -33,7 +33,7 @@ try:
             else:
                 print(f"Failed to fetch the page. status code: {response.status_code}")
                 break
-        with open("webscraper\quotes.csv", "w", newline="", encoding="utf-8") as file:
+        with open("quotes.csv", "w", newline="", encoding="utf-8") as file:
             writer = csv.writer(file)
             writer.writerow(["Quote", "Author", "Tags"])
             writer.writerows(all_quotes)
