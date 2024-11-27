@@ -2,10 +2,11 @@
     "base_url": "https://quotes.toscrape.com",
     "output_file": "data.csv",
     "output_format": "csv",
+    "css_selector": "div.quote",
     "selectors": {
-        "Quotes": "div.quote span.text",
-        "Author": "div.quote span small.author",
-        "Tags": "div.quote div.tags a"
+        "Quotes": "span.text",
+        "Author": "span small.author",
+        "Tags": "div.tags a"
     },
     "pagination_selector": "li.next a"
 }

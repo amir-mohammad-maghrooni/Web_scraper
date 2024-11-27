@@ -17,7 +17,7 @@ def create_config():
     
     output_file = input("Enter the output file name (e.g., data.json or data.csv): ").strip()
     output_format = "json" if output_file.endswith(".json") else "csv"
-    
+    css_selector = input("Enter the CSS selector(the container for the data you want to scrape)").strip()
     print("\nDefine the data you want to scrape (e.g., title, price, availability):")
     selectors = {}
     while True:
@@ -35,6 +35,7 @@ def create_config():
         "base_url": base_url,
         "output_file": output_file,
         "output_format": output_format,
+        "css_selector": css_selector,
         "selectors": selectors,
         "pagination_selector": pagination_selector
     }
@@ -70,8 +71,9 @@ class WebScraper:
     def parse_page(self, current_url, html):
         soup = BeautifulSoup(html, "html.parser")
         items = []
-
-        for el in soup.select("div.quote"):
+        main_selector = self.config["css_selector"]
+        elements = soup.select(main_selector)
+        for el in elements:
             item = {}
             for field, selector in self.config["selectors"].items():
                 targets = el.select(selector)

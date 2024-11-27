@@ -2,6 +2,7 @@
     "base_url": "http://books.toscrape.com/",
     "output_file": "books.json",
     "output_format": "json",
+    "css_selector": "article.product_pod",
     "selectors": {
         "title": "h3 a",
         "price": "p.price_color",
