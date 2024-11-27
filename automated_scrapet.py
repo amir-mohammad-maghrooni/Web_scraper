@@ -74,8 +74,14 @@ class WebScraper:
         for el in soup.select("div.quote"):
             item = {}
             for field, selector in self.config["selectors"].items():
-                target = el.select_one(selector)
-                item[field] = target.text.strip() if target else None
+                targets = el.select(selector)
+                if targets:
+                    if len(targets) > 1:
+                        item[field] = [target.text.strip() for target in targets]
+                    elif len(targets) == 1:
+                        item[field] = targets[0].text.strip()
+                else:
+                    item[field] = None
 
             items.append(item)
 
